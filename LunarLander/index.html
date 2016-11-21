@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page title</title>
+	<link rel = "stylesheet" type = "text/css" href = "css/styles.css" />
+
+	<script type="text/javascript">
+	window.onload = function() {
+	// Pone el foco en el gameScreen para capturar las teclas
+		document.getElementById("gameScreen").focus();
+	};
+	
+	function keyPress(event)
+	// Captura cuando se preiona una tecla
+	{
+		var ship = document.getElementById("ship");
+		var elementStyle = window.getComputedStyle(ship);
+		var marginLeft;
+		var marginTop;
+		
+		switch(event.keyCode) {
+		case 39: // arrow right
+			marginLeft = elementStyle.marginLeft;//get margin left value
+			marginLeft = marginLeft.replace("px", " ");//remove px
+			marginLeft = parseInt(marginLeft);//convert string to integer
+			marginLeft += 30;
+			ship.style.marginLeft = marginLeft + "px";
+			break;
+		case 37: // arrow left
+			marginLeft = elementStyle.marginLeft;//get margin left value
+			marginLeft = marginLeft.replace("px", " ");//remove px
+			marginLeft = parseInt(marginLeft);//convert string to integer
+			marginLeft -= 30;
+			ship.style.marginLeft = marginLeft + "px";
+			break;
+		case 38: // arrow up
+			marginTop = elementStyle.marginTop;//get margin left value
+			marginTop = marginTop.replace("px", " ");//remove px
+			marginTop = parseInt(marginTop);//convert string to integer
+			marginTop -= 30;
+			ship.style.marginTop = marginTop + "px";
+			break;
+		case 40: // arrow down
+			marginTop = elementStyle.marginTop;//get margin left value
+			marginTop = marginTop.replace("px", " ");//remove px
+			marginTop = parseInt(marginTop);//convert string to integer
+			marginTop += 30;
+			ship.style.marginTop = marginTop + "px";
+			break;
+
+		default:
+			break;
+		}		
+	}
+	</script
+</head>
+<body>
+	<h1>Lunar Lander</h1>
+
+	<div id="gameScreen" tabindex="1" onkeydown="keyPress(event)">
+		<div id="sky">
+			<div id="control">
+				<span class="texto">velocidad:</span>
+				<span class="texto" id="vel">0.05</span>
+				<br/>
+				<span class="texto">fuel (0-5):</span>
+				<span class="texto" id="fuel">4</span>
+				<br/>
+				<span class="texto">alture (0-10):</span>
+				<span class="texto" id="altura">5</span>
+			</div>
+			<div id="options">
+				<span class="texto"><a href="">Pause</a></span>
+				<br/>
+				<span class="texto"><a href="about.html">About</a></span>
+				<br/>
+				<span class="texto"><a href="howto.html">How to play</a></span>
+			</div>
+			<div id="ship">
+			</div>
+		</div>
+		
+		<div id="land">
+		</div>
+	</div>
+
+</body>
+</html>
