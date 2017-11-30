@@ -6,4 +6,4 @@ About contien información sobre el juego y el autor.
 
 Ademas tiene un panel de información sobre la altura, velocidad y combustible de la nave.
 
-El juego consiste en alunizar la nave.
+El juego consiste en alunizar la nave, pero no funciona todavia son solo imagenes estaticas.
